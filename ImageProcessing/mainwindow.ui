@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>524</width>
+    <height>448</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QGraphicsView" name="show"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="open">
+      <property name="text">
+       <string>Open</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="reset">
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="forward">
+      <property name="text">
+       <string>&lt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="back">
+      <property name="text">
+       <string>&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>524</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionReset"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="actionForward"/>
+    <addaction name="actionBack"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>处理</string>
+    </property>
+    <addaction name="actionRgb2Gray"/>
+    <addaction name="actionBw"/>
+    <addaction name="actionColorReverse"/>
+    <addaction name="separator"/>
+    <addaction name="actionContrastStretch"/>
+    <addaction name="actionLogTransform"/>
+    <addaction name="separator"/>
+    <addaction name="actionHisteq"/>
+    <addaction name="actionExactHisteq"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>滤波</string>
+    </property>
+    <widget class="QMenu" name="menuSpatialFilter">
+     <property name="title">
+      <string>SpatialFilter</string>
+     </property>
+     <addaction name="actionZeroPadding"/>
+     <addaction name="actionDuplicatePadding"/>
+     <addaction name="actionMirrorPadding"/>
+    </widget>
+    <addaction name="menuSpatialFilter"/>
+    <addaction name="actionMedianFilter"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>变换</string>
+    </property>
+    <addaction name="action2D_FT"/>
+    <addaction name="action2D_IFT"/>
+    <addaction name="separator"/>
+    <addaction name="actionAffine_Transform"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>效果</string>
+    </property>
+    <addaction name="actionRelief"/>
+    <addaction name="actionGaussian_Blur"/>
+    <addaction name="actionOil_Paint"/>
+    <addaction name="actionEdge_Extraction"/>
+    <addaction name="separator"/>
+    <addaction name="actionSwell"/>
+    <addaction name="actionErosion"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_Operation"/>
+    <addaction name="actionClose_Operation"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_6"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionForward">
+   <property name="text">
+    <string>Forward</string>
+   </property>
+   <property name="shortcut">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="actionRgb2Gray">
+   <property name="text">
+    <string>Rgb2Gray</string>
+   </property>
+  </action>
+  <action name="actionBw">
+   <property name="text">
+    <string>Bw</string>
+   </property>
+  </action>
+  <action name="actionColorReverse">
+   <property name="text">
+    <string>ColorReverse</string>
+   </property>
+  </action>
+  <action name="actionContrastStretch">
+   <property name="text">
+    <string>ContrastStretch</string>
+   </property>
+  </action>
+  <action name="actionLogTransform">
+   <property name="text">
+    <string>LogTransform</string>
+   </property>
+  </action>
+  <action name="actionHisteq">
+   <property name="text">
+    <string>Histeq</string>
+   </property>
+  </action>
+  <action name="actionExactHisteq">
+   <property name="text">
+    <string>ExactHisteq</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionMedianFilter">
+   <property name="text">
+    <string>MedianFilter</string>
+   </property>
+  </action>
+  <action name="actionZeroPadding">
+   <property name="text">
+    <string>zeroPadding</string>
+   </property>
+  </action>
+  <action name="actionDuplicatePadding">
+   <property name="text">
+    <string>duplicatePadding</string>
+   </property>
+  </action>
+  <action name="actionMirrorPadding">
+   <property name="text">
+    <string>mirrorPadding</string>
+   </property>
+  </action>
+  <action name="action2D_FT">
+   <property name="text">
+    <string>2D FT</string>
+   </property>
+  </action>
+  <action name="action2D_IFT">
+   <property name="text">
+    <string>2D IFT</string>
+   </property>
+  </action>
+  <action name="actionAffine_Transform">
+   <property name="text">
+    <string>Affine Transform</string>
+   </property>
+  </action>
+  <action name="actionRelief">
+   <property name="text">
+    <string>Relief</string>
+   </property>
+  </action>
+  <action name="actionGaussian_Blur">
+   <property name="text">
+    <string>Gaussian Blur</string>
+   </property>
+  </action>
+  <action name="actionOil_Paint">
+   <property name="text">
+    <string>Oil Paint</string>
+   </property>
+  </action>
+  <action name="actionEdge_Extraction">
+   <property name="text">
+    <string>Edge Extraction</string>
+   </property>
+  </action>
+  <action name="actionSwell">
+   <property name="text">
+    <string>Swell</string>
+   </property>
+  </action>
+  <action name="actionErosion">
+   <property name="text">
+    <string>Erosion</string>
+   </property>
+  </action>
+  <action name="actionOpen_Operation">
+   <property name="text">
+    <string>Open Operation</string>
+   </property>
+  </action>
+  <action name="actionClose_Operation">
+   <property name="text">
+    <string>Close Operation</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
